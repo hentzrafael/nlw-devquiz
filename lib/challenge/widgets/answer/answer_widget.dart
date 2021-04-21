@@ -6,10 +6,11 @@ class AnswerWidget extends StatelessWidget {
   final bool isRight;
   final bool isSelected;
   AnswerWidget({
-    Key? key, 
+    Key? key,
     required this.title,
     this.isRight = false,
-    this.isSelected = false,}) : super(key : key);
+    this.isSelected = false,
+  }) : super(key: key);
 
   Color get _selectedColorRight =>
       isRight ? AppColors.darkGreen : AppColors.darkRed;
@@ -37,29 +38,40 @@ class AnswerWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: isSelected ? _selectedColorCardRight : Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.fromBorderSide(BorderSide(
-            color: isSelected ? _selectedBorderCardRight: AppColors.border),
-        ),),
+          border: Border.fromBorderSide(
+            BorderSide(
+                color:
+                    isSelected ? _selectedBorderCardRight : AppColors.border),
+          ),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-          Expanded(child: Text(
-            title, 
-            style: isSelected ? _selectedTextStyleRight: AppTextStyles.body,)),
-          Container(
-            height: 24,
-            width: 24,
-            decoration: BoxDecoration(
-              color: isSelected ? _selectedColorRight :  AppColors.white,
-              borderRadius: BorderRadius.circular(500),
-              border: Border.fromBorderSide(BorderSide(
-                color: isSelected ? _selectedBorderRight :  AppColors.border)),
-            ),
-            child: isSelected ? Icon(_selectedIconRight, size: 16,color: Colors.white,): null),
-          
-
-        ],),
-        
+            Expanded(
+                child: Text(
+              title,
+              style: isSelected ? _selectedTextStyleRight : AppTextStyles.body,
+            )),
+            Container(
+                height: 24,
+                width: 24,
+                decoration: BoxDecoration(
+                  color: isSelected ? _selectedColorRight : AppColors.white,
+                  borderRadius: BorderRadius.circular(500),
+                  border: Border.fromBorderSide(BorderSide(
+                      color: isSelected
+                          ? _selectedBorderRight
+                          : AppColors.border)),
+                ),
+                child: isSelected
+                    ? Icon(
+                        _selectedIconRight,
+                        size: 16,
+                        color: Colors.white,
+                      )
+                    : null),
+          ],
+        ),
       ),
     );
   }

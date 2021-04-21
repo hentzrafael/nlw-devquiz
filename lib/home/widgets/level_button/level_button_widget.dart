@@ -5,29 +5,30 @@ import 'package:google_fonts/google_fonts.dart';
 class LevelButtonWidget extends StatelessWidget {
   final String label;
   LevelButtonWidget({
-    Key? key, 
-    required this.label,}):
-    assert(["Fácil", "Médio", "Difícil", "Perito"].contains(label)), super(key: key);
+    Key? key,
+    required this.label,
+  })   : assert(["Fácil", "Médio", "Difícil", "Perito"].contains(label)),
+        super(key: key);
 
   final config = {
-    "Fácil" : {
+    "Fácil": {
       "color": AppColors.levelButtonFacil,
-      "borderColor" : AppColors.levelButtonBorderFacil,
+      "borderColor": AppColors.levelButtonBorderFacil,
       "fontColor": AppColors.levelButtonTextFacil,
     },
-    "Médio" : {
+    "Médio": {
       "color": AppColors.levelButtonMedio,
-      "borderColor" : AppColors.levelButtonBorderMedio,
+      "borderColor": AppColors.levelButtonBorderMedio,
       "fontColor": AppColors.levelButtonTextMedio,
     },
-    "Difícil" : {
+    "Difícil": {
       "color": AppColors.levelButtonDificil,
-      "borderColor" : AppColors.levelButtonBorderDificil,
+      "borderColor": AppColors.levelButtonBorderDificil,
       "fontColor": AppColors.levelButtonTextDificil,
     },
-    "Perito" : {
+    "Perito": {
       "color": AppColors.levelButtonPerito,
-      "borderColor" : AppColors.levelButtonBorderPerito,
+      "borderColor": AppColors.levelButtonBorderPerito,
       "fontColor": AppColors.levelButtonTextPerito,
     },
   };
@@ -46,10 +47,13 @@ class LevelButtonWidget extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 6),
-        child: Text(label, style: GoogleFonts.notoSans(
-          color: fontColor,
-          fontSize: 13,
-        ),),
+        child: Text(
+          label,
+          style: GoogleFonts.notoSans(
+            color: fontColor,
+            fontSize: 13,
+          ),
+        ),
       ),
     );
   }
