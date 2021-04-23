@@ -26,7 +26,8 @@ class AppBarWidget extends PreferredSize {
                             style: AppTextStyles.title,
                             children: [
                               TextSpan(
-                                  text: user.name, style: AppTextStyles.titleBold)
+                                  text: user.name,
+                                  style: AppTextStyles.titleBold)
                             ])),
                         Container(
                             width: 58,
@@ -39,7 +40,10 @@ class AppBarWidget extends PreferredSize {
                     ),
                   ),
                   Align(
-                      alignment: Alignment(0.0, 1.0), child: ScoreCardWidget())
+                      alignment: Alignment(0.0, 1.0),
+                      child: ScoreCardWidget(
+                        percent: user.score / 100,
+                      ))
                 ],
               ),
             ));
